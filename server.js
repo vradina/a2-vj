@@ -31,6 +31,8 @@ const handleGet = function( request, response ) {
         // Replace the template code just for this endpoint
         response.writeHead(200, { "Content-Type": "text/html" });
         let html = fs.readFileSync(__dirname + '/public/index.html','utf8');
+        const mylist = "<ul><li>Large hamburger</li><li>Fries</li></ul>";
+
         html = html.replace("{listofthings}", mylist)
         response.end(html);
     } else {
